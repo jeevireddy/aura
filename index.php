@@ -63,7 +63,7 @@ $(window).load(function(){
 
     
         // ask user for name with popup prompt    
-        var name = prompt("Enter your chat name:", "Name");
+        var name = prompt("Enter your chat name:", "Enter Your Name");
         
         // default name is 'Guest'
     	if (!name || name === ' ') {
