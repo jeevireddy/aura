@@ -1,0 +1,26 @@
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
+language: php
+
+# list any PHP version you want to test against
+php:
+  # using major version aliases
+
+  # aliased to a recent 5.5.x version
+  - 5.5
+
+
+# omitting "script:" will default to phpunit
+# use the $DB env variable to determine the phpunit.xml to use
+script: sh test.sh
+
+deploy:
+  edge: true
+  provider: cloudfoundry
+  buildpack: https://github.com/cloudfoundry/php-buildpack.git
+  username: jeevireddy@gmail.com
+  password: ckck1025
+  api: https://api.run.pivotal.io
+  organization: webanalytics_1
+  space: mega_hackathon
+
+sudo: required

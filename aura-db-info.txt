@@ -1,0 +1,22 @@
+--jeevi reddy
+{
+  "jdbcUrl": "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_463a2c81da5e2c0?user=bee1e683ba77e3&password=ad803f31",
+  "uri": "mysql://bee1e683ba77e3:ad803f31@us-cdbr-iron-east-03.cleardb.net:3306/ad_463a2c81da5e2c0?reconnect=true",
+  "name": "ad_463a2c81da5e2c0",
+  "hostname": "us-cdbr-iron-east-03.cleardb.net",
+  "port": "3306",
+  "username": "bee1e683ba77e3",
+  "password": "ad803f31"
+}
+
+
+---siva vulli's
+{
+  "jdbcUrl": "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_b0866641ccff844?user=b5cc7e24bc5291&password=4510e1e2",
+  "uri": "mysql://b5cc7e24bc5291:4510e1e2@us-cdbr-iron-east-03.cleardb.net:3306/ad_b0866641ccff844?reconnect=true",
+  "name": "ad_b0866641ccff844",
+  "hostname": "us-cdbr-iron-east-03.cleardb.net",
+  "port": "3306",
+  "username": "b5cc7e24bc5291",
+  "password": "4510e1e2"
+}
