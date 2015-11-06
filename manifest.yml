@@ -1,0 +1,10 @@
+applications:
+- name: aura
+  memory: 1024M 
+  instances: 1
+  host: aura
+  domain: cfapps.io
+  path: .
+  buildpack: https://github.com/cloudfoundry/php-buildpack.git,https://github.com/cloudfoundry-community/nginx-buildpack.git
+  services:
+  - aura
