@@ -11,8 +11,7 @@ function nullif($var){
  
  } 
  
-
- $con=mysqli_connect("localhost","root","admin","cb1");
+ $con=mysqli_connect("us-cdbr-iron-east-03.cleardb.net","bee1e683ba77e3","ad803f31","ad_463a2c81da5e2c0");
  if (mysqli_connect_errno($con))
  {
  	echo "Failed to connect to MySQL: " . mysqli_connect_error();

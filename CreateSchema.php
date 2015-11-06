@@ -3,7 +3,7 @@ ini_set("error_reporting", E_ALL);
 ini_set("display_errors", 1); 
 
 /*
-$con=mysqli_connect("us-cdbr-iron-east-03.cleardb.net","b5cc7e24bc5291","4510e1e2","ad_b0866641ccff844");
+$con=mysqli_connect("us-cdbr-iron-east-03.cleardb.net","bee1e683ba77e3","ad803f31","ad_463a2c81da5e2c0");
 */
 
 $con=mysqli_connect("localhost","root","","mysql");

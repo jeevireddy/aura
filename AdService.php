@@ -2,12 +2,12 @@
 ini_set("error_reporting", E_ALL); 
 ini_set("display_errors", 1); 
 
-$con=mysqli_connect("localhost","root","admin","cb1");
+$con=mysqli_connect("us-cdbr-iron-east-03.cleardb.net","bee1e683ba77e3","ad803f31","ad_463a2c81da5e2c0");
 if (mysqli_connect_errno($con))
 {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$sql = "call cb1.split_string();";
+$sql = "call ad_463a2c81da5e2c0.splitChatstring();";
 $result = $con->query($sql);
 $sql = " select splitted_Column from tbl_finallist where id='Group';";
 $result = $con->query($sql);
