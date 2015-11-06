@@ -21,6 +21,6 @@ deploy:
   password: ckck1025
   api: https://api.run.pivotal.io
   organization: aura
-  space: aura
+  space: development
 
 sudo: required
