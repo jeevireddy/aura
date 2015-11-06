@@ -20,7 +20,7 @@ deploy:
   username: jeevireddy@gmail.com
   password: ckck1025
   api: https://api.run.pivotal.io
-  organization: webanalytics_1
-  space: mega_hackathon
+  organization: aura
+  space: aura
 
 sudo: required
