@@ -1,2 +1,4 @@
 
-Jeevi
+<?php
+phpinfo();
+?>
