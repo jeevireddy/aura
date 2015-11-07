@@ -19,7 +19,7 @@
         	         data: {Chat: Chat}, 
         	         type: 'post', 
         	         success: function(output) { 
-        	 // alert(output); 
+        	  alert(output); 
         	                  }, 
         	         error:function(err){ 
         	         	 
