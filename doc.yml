@@ -1,0 +1,8 @@
+development: 
+adapter: mysql 
+encoding: unicode 
+database: aura 
+username: root
+password: 
+host: localhost 
+port: 3306
