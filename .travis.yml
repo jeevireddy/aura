@@ -23,4 +23,4 @@ deploy:
   organization: aura
   space: development
 
-sudo: required
+sudo: false
