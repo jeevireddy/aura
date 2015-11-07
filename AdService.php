@@ -9,7 +9,7 @@ if (mysqli_connect_errno($con))
 }
 $sql = "call ad_463a2c81da5e2c0.splitChatstring();";
 $result = $con->query($sql);
-$sql = " select splitted_Column from tbl_finallist where id='Group';";
+$sql = " select splitted_Column from tbl_finallist where id='222115';";
 $result = $con->query($sql);
 
 if (!$result && !$resultcolumn) {
