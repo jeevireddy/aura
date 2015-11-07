@@ -58,7 +58,7 @@ $(window).load(function(){
 	$("#ads").css("left",$("#chat-area").position().left);
 	$("#ads").width($("#chat-area").width());
 	$("#ads").height(50);
-	$("#ads").html('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"> Welcome to Verizon aura <a href=>'+KNOW MORE +' </a> here</p></div>'); 
+	
 });
 
 
