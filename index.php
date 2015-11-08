@@ -12,7 +12,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="chat.js"></script>
     <script type="text/javascript">
-    function sendtext(Chat)
+    function sendtext(Chat,nickname )
     {
         $.ajax({  
         	     	url: 'Service.php', 
@@ -130,6 +130,8 @@ $(window).load(function(){
     			  if (e.keyCode == 13) { 
     			  
                     var text = $(this).val();
+					alert(text);
+					alert(name);
                     sendtext(text,name);
                     counter++;
                     //if(
