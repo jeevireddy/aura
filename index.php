@@ -57,8 +57,6 @@
 				var res = str.split(">");				
 				link = res[0];
 				linkurl = res[1];
-				alert(link);
-				alert(linkurl);
 			}
 		var linkPrint='<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;">Your Ad related to <a href="';
 		linkPrint = linkPrint+ linkurl;
@@ -66,7 +64,7 @@
 		linkPrint = linkPrint + link;
 		linkPrint = linkPrint + ' </a> is here</p></div>';
 		
-				alert(linkPrint);
+
 				$("#ads").html(linkPrint); 
  	                  }, 
  	         error:function(err){ 
