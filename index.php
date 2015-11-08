@@ -133,8 +133,6 @@ $(window).load(function(){
     			  if (e.keyCode == 13) { 
     			  
                     var text = $(this).val();
-					alert(text);
-					alert(name);
                     sendtext(text,name);
                     counter++;
                     //if(
