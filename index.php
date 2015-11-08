@@ -39,7 +39,29 @@
  	         data: {Chat: "nanu"}, 
  	         type: 'post', 
  	         success: function(output) { 
-				$("#ads").html('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"> Your add related to <a href=  target="_blank">'+output+' </a> is here</p></div>'); 
+			 
+			 
+			 var str = output;
+			 alert(str);
+			 
+			 var link ='';
+			 var linkurl ='';
+			if (str =="")
+			{
+				link = 'Google';
+				linkurl = 'http://google.com';
+			}
+			else
+			{
+				var res = str.split(">");				
+				link = res[0];
+				linkurl = res[1];
+				alert(link);
+				alert(linkurl);
+			}
+
+		alert('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"> Your Ad related to <a   target="_blank" href="+linkurl+>"'+link+' </a> is here</p></div>');
+				$("#ads").html('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"> Your Ad related to <a   target="_blank" href="+linkurl+>"'+link+' </a> is here</p></div>'); 
  	                  }, 
  	         error:function(err){ 
  	         	 

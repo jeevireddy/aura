@@ -16,7 +16,8 @@ function nullif($var){
  {
  	echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
- $sql = "INSERT INTO  tbl_chathistory (Chat,Account_id,chat_ts,Latitude,Longitude,user_id,chat_group) VALUES ('"	.nullif($_POST["Chat"])."',222115,sysdate(),40.91709,-72.709457,'test','nfl')";
+ 
+ $sql = "INSERT INTO  tbl_chathistory (Chat,Account_id,chat_ts,Latitude,Longitude,user_id,chat_group) VALUES ('"	.nullif($_POST["Chat"])."',222115,sysdate(),40.91709,-72.709457,'"	.nullif($_POST["nickname"])."','nfl')";
  						if (!mysqli_query($con,$sql))
  						{
  							die('Error: ' . mysqli_error($con));
