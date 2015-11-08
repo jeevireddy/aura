@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 insert into tbl_adinventory values("Oakland","oakland.athletics.mlb.com/ticketing/?c_id=oak","Oakland Athletics Tickets","Y");
 insert into tbl_adinventory values("moneyball","https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930","Moneyball on demand video","Y");
 insert into tbl_adinventory values("Cricket","www.cricbuzz.com","Live Cricket Scores","Y");

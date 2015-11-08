@@ -16,7 +16,8 @@
     {
         $.ajax({  
         	     	url: 'Service.php', 
-        	         data: {Chat: Chat}, 
+        	         data: {Chat: Chat,
+					 nickname:nickname }, 
         	         type: 'post', 
         	         success: function(output) { 
         	 // alert(output); 
@@ -42,7 +43,7 @@
 			 
 			 
 			 var str = output;
-			 alert(str);
+			 
 			 
 			 var link ='';
 			 var linkurl ='';
@@ -60,8 +61,8 @@
 				alert(linkurl);
 			}
 
-		alert('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"> Your Ad related to <a   target="_blank" href="+linkurl+>"'+link+' </a> is here</p></div>');
-				$("#ads").html('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"> Your Ad related to <a   target="_blank" href="+linkurl+>"'+link+' </a> is here</p></div>'); 
+		alert('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;">Your Ad related to <a href="'+linkurl+'"  target="_blank" >'+link+' </a> is here</p></div>');
+				$("#ads").html('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;">Your Ad related to <a href="'+linkurl+'"  target="_blank" >'+link+' </a> is here</p></div>'); 
  	                  }, 
  	         error:function(err){ 
  	         	 
@@ -129,7 +130,7 @@ $(window).load(function(){
     			  if (e.keyCode == 13) { 
     			  
                     var text = $(this).val();
-                    sendtext(text);
+                    sendtext(text,name);
                     counter++;
                     //if(
                     
