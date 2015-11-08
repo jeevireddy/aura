@@ -64,13 +64,13 @@
 		linkPrint = linkPrint + '<span class="highlight">'+ link+'</span>';
 		linkPrint = linkPrint + ' </a> is here</p></div>';
 		
-		if(link='cricket')
+		if(link=='cricket')
 		{linkPrint = '<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"><a href="www.cricbuzz.com" target="_blank"> <span class="highlight">Live Cricket Scores</span> </a></p></div>';}
-		if(link='Oakland')
+		if(link=='oakland')
 		{linkPrint = '<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"><a href="oakland.athletics.mlb.com/ticketing/?c_id=oak" target="_blank"> <span class="highlight">Oakland Athletics Tickets</span></a> </p></div>';}
-		if(link='shopping')
+		if(link=='shopping')
 		{linkPrint = '<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"><a href="www.amazon.com" target="_blank"> <span class="highlight">Shopping at Amazon</span> </a></p></div>';}
-		if(link='moneyball')
+		if(link=='moneyball')
 		{linkPrint = '<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"><a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank"> <span class="highlight">Moneyball on demand Video</span></a> </p></div>';}
 		
 				$("#ads").html(linkPrint); 
