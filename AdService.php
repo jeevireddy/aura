@@ -9,7 +9,7 @@ if (mysqli_connect_errno($con))
 }
 $sql = "call ad_463a2c81da5e2c0.splitChatstring();";
 $result = $con->query($sql);
-$sql = " select splitted_Column from tbl_finallist where id='NFL';";
+$sql = "select linkurl from adText order by add_ts desc limit 1;";
 $result = $con->query($sql);
 
 if (!$result && !$resultcolumn) {

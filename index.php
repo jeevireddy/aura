@@ -39,7 +39,7 @@
  	         data: {Chat: "nanu"}, 
  	         type: 'post', 
  	         success: function(output) { 
-				$("#ads").html('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"> Your add related to <a href=>'+output+' </a> is here</p></div>'); 
+				$("#ads").html('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"> Your add related to <a href=  target="_blank">'+output+' </a> is here</p></div>'); 
  	                  }, 
  	         error:function(err){ 
  	         	 
