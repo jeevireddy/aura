@@ -14,7 +14,7 @@
     <script type="text/javascript">
     function sendtext(Chat,nickname )
     {
-        $.ajax({  
+		       $.ajax({  
         	     	url: 'Service.php', 
         	         data: {Chat: Chat,
 					 nickname:nickname }, 
@@ -60,9 +60,14 @@
 				alert(link);
 				alert(linkurl);
 			}
-
-		alert('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;">Your Ad related to <a href="'+linkurl+'"  target="_blank" >'+link+' </a> is here</p></div>');
-				$("#ads").html('<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;">Your Ad related to <a href="'+linkurl+'"  target="_blank" >'+link+' </a> is here</p></div>'); 
+		var linkPrint='<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;">Your Ad related to <a href="';
+		linkPrint = linkPrint+ linkurl;
+		linkPrint = linkPrint + '"  target="_blank" >';
+		linkPrint = linkPrint + link;
+		linkPrint = linkPrint + ' </a> is here</p></div>';
+		
+				alert(linkPrint);
+				$("#ads").html(linkPrint); 
  	                  }, 
  	         error:function(err){ 
  	         	 
