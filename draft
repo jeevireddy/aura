@@ -17,7 +17,8 @@
 
 
 
-
+SELECT concat(link,'>',hyperlink) ,sysdate() FROM tbl_adinventory s JOIN tbl_finallist c
+ON FIND_IN_SET(LOWER(s.keyword),LOWER(c.splitted_Column)) where c.id='NFL'
 
 insert into tbl_adinventory values("Oakland","oakland.athletics.mlb.com/ticketing/?c_id=oak","Oakland Athletics Tickets","Y");
 insert into tbl_adinventory values("moneyball","https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930","Moneyball on demand video","Y");

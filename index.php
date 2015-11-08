@@ -58,13 +58,21 @@
 				link = res[0];
 				linkurl = res[1];
 			}
-		var linkPrint='<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;">Your Ad related to <a href="';
+		var linkPrint='<div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;">Your AD related to <a href="';
 		linkPrint = linkPrint+ linkurl;
 		linkPrint = linkPrint + '"  target="_blank" >';
-		linkPrint = linkPrint + link;
+		linkPrint = linkPrint + '<span class="highlight">'+ link+'</span>';
 		linkPrint = linkPrint + ' </a> is here</p></div>';
 		
-
+		if(link='cricket')
+		{linkPrint = <div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"><a href="www.cricbuzz.com" target="_blank"> <span class="highlight">Live Cricket Scores</span> </p></div>';}
+		if(link='Oakland')
+		{linkPrint = <div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"><a href="oakland.athletics.mlb.com/ticketing/?c_id=oak" target="_blank"> <span class="highlight">Oakland Athletics Tickets</span> </p></div>';}
+		if(link='shopping')
+		{linkPrint = <div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"><a href="www.amazon.com" target="_blank"> <span class="highlight">Shopping at Amazon</span> </p></div>';}
+		if(link='moneyball')
+		{linkPrint = <div style="left:20px;top:5px;position:relative;" ><p style="color:blue;font-weight:bold;"><a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank"> <span class="highlight">Moneyball on demand Video</span> </p></div>';}
+		
 				$("#ads").html(linkPrint); 
  	                  }, 
  	         error:function(err){ 

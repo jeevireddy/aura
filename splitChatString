@@ -86,7 +86,8 @@ insert into adText (linkurl,add_ts)
 select concat(splitted_Column, '>' , 'http://www.google.com/search?q=' , splitted_Column ,'&btnI') , sysdate() from tbl_finallist where id='NFL' and splitted_column is not null;
 
 insert into adText (linkurl,add_ts)
-SELECT concat(link,'>',hyperlink)  ,sysdate() FROM tbl_adinventory where lower(keyword) in (select lower(splitted_Column) from tbl_finallist where id='NFL');
+SELECT concat(link,'>',hyperlink) ,sysdate() FROM tbl_adinventory s JOIN tbl_finallist c
+ON FIND_IN_SET(LOWER(s.keyword),LOWER(c.splitted_Column)) where c.id='NFL'
 
 END$$
 DELIMITER ;

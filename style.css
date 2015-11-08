@@ -13,4 +13,4 @@ h2                              { color: #fa9f00; font: 30px Helvetica, Sans-Ser
 
 #send-message-area             { float: left;  padding-top: 1px; font-size: 14px; }
 #sendie                         { border: 3px solid #999; width: 360px; padding: 10px; font: 12px "Lucida Grande", Sans-Serif; float: right; }
-
+span.highlight {   background-color: yellow;}
