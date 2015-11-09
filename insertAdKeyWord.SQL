@@ -19,11 +19,12 @@ BEGIN
 
 	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done=1;
 
-	TRUNCATE  TABLE`my_splits`;
+	TRUNCATE  TABLE my_splits;
 
 	OPEN splitter_cur;
 	
 	SPLITTER_LOOP: 	
+
 	LOOP FETCH splitter_cur INTO split_id,chat_statement;
 
 		SET occurance = length(chat_statement)-length(replace(chat_statement,' ',''))+1;
@@ -37,7 +38,7 @@ BEGIN
 			SET i=1;
 			WHILE i <= occurance 
 			DO
-				INSERT INTO my_splits (`splitted_column`,`id`)
+				INSERT INTO my_splits ('splitted_column','id')
 				SELECT REPLACE(SUBSTRING(SUBSTRING_INDEX(chat_statement, ' ', i),LENGTH(SUBSTRING_INDEX(chat_statement, ' ', i -1)) + 1),' ', '') as splitted_column,split_id;
 				
 				SET ins_query = concat("insert into my_splits(splitted_column,id) values(", concat("SUBSTRING_INDEX(SUBSTRING_INDEX( '",chat_statement ,"', '",my_delimiter,"', ",i, "),'",my_delimiter,"',-1),",split_id,");"));
