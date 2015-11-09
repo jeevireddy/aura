@@ -1,93 +1,142 @@
 DELIMITER $$
-CREATE  PROCEDURE `splitChatString`()
-BEGIN
+CREATE PROCEDURE insertAdKeyWord() 
+BEGIN 
+  
+  DECLARE my_delimiter 		CHAR(1);
+  DECLARE chat_statement 	VARCHAR(5000);
+  DECLARE done         		INT;
+  DECLARE occurance    		INT;
+  DECLARE i            		INT;
+  DECLARE split_id     		char(100);
+  DECLARE ins_query    		VARCHAR(5000);
+  
+  DECLARE  	splitter_cur CURSOR FOR
+  
+  SELECT   	user_id, 
+			Replace(chat,'''','') chat 
+  FROM     	tbl_chathistory 
+  ORDER 	BY chat_ts DESC limit 6;
+  
+  
+  DECLARE CONTINUE handler FOR NOT found SET done=1;
+  
+  TRUNCATE TABLE `my_splits`;
+  
+  OPEN splitter_cur; 
+  SPLITTER_LOOP:
+  
+  LOOP FETCH splitter_cur  
+  INTO  split_id, chat_statement;
+  	
+	SET occurance = length(chat_statement) - length(replace(chat_statement,' ','')) +1;
+	SET my_delimiter = ' ';
+	IF done=1 then
+	LEAVE SPLITTER_LOOP;
+	END IF;
 
-DECLARE my_delimiter CHAR(1);
-DECLARE split_string varchar(5000);
-DECLARE done INT;
-DECLARE occurance INT;
-DECLARE i INT;
-DECLARE split_id INT;
-DECLARE ins_query VARCHAR(5000);
-DECLARE splitter_cur CURSOR FOR
-SELECT account_id,replace(chat,'''','') chat FROM tbl_chathistory;
+
+	IF occurance > 0 THEN
+    SET i=1;
+    WHILE i <= occurance DO
+	
+ 
+	INSERT INTO my_splits
+            ( 
+                        `splitted_column`, 
+                        `id` 
+            ) 
+			
+			
+	SELECT 	Replace(Substring(Substring_index(chat_statement, ' ', i),
+			Length(Substring_index(chat_statement, ' ', i -1)) + 1),' ', '') AS splitted_column,
+			split_id;
+			
+	SET ins_query 	= concat("insert into my_splits(splitted_column,id) values(", concat("SUBSTRING_INDEX(SUBSTRING_INDEX('",chat_statement ,"', '",my_delimiter,"', ",i, "),'",my_delimiter,"',-1),",split_id,");"));
+	SET @ins_query	= ins_query;
+
+	PREPARE ins_query FROM @ins_query;
+	EXECUTE Ins_query;
+	SET i=i+1;
+  END WHILE;
 
 
-DECLARE CONTINUE HANDLER FOR NOT FOUND SET done=1;
-
-TRUNCATE  TABLE`my_splits`;
-
-
-OPEN splitter_cur;
-splitter_loop:LOOP
-      FETCH splitter_cur INTO split_id,split_string;
-
-SET occurance=length(split_string)-length(replace(split_string,' ',''))+1;
-SET my_delimiter=' ';
-  IF done=1 THEN
-    LEAVE splitter_loop;
-  END IF;
-#  select occurance;
-  IF occurance > 0 then
-    #select occurance;
-    set i=1;
-    while i <= occurance do
-#        select concat("SUBSTRING_INDEX(SUBSTRING_INDEX( '",split_string ,"', '",my_delimiter,"', ",i, "),'",my_delimiter,"',-1);");
-insert into my_splits (`splitted_column`,`id`)
-SELECT REPLACE(SUBSTRING(SUBSTRING_INDEX(split_string, ' ', i),LENGTH(SUBSTRING_INDEX(split_string, ' ', i -1)) + 1),' ', '')
-as splitted_column,split_id;
-        SET ins_query=concat("insert into my_splits(splitted_column,id) values(", concat("SUBSTRING_INDEX(SUBSTRING_INDEX( '",split_string ,"', '",my_delimiter,"', ",i, "),'",my_delimiter,"',-1),",split_id,");"));
-        
-    #select ins_query;
-        set @ins_query=ins_query;
-        #select @ins_query;
-        PREPARE ins_query from @ins_query;
-        EXECUTE ins_query;
-      set i=i+1;
-    end while;
-  ELSE
-        set ins_query=concat("insert into my_splits(splitted_column,id) values(",split_string,"',",split_id,");");
-        set @ins_query=ins_query;
-        PREPARE ins_query from @ins_query;
-        EXECUTE ins_query;
-  END IF;
-  set occurance=0;
-END LOOP;
+	ELSE 
+		SET ins_query = concat("insert into my_splits(splitted_column,id) values(",chat_statement,"',",split_id,");");
+		SET @ins_query=ins_query;
+		PREPARE ins_query FROM @ins_query;
+		EXECUTE Ins_query;ENDIF;
+		SET occurance=0;
+	END
+	loop;
 
 CLOSE splitter_cur;
 
-TRUNCATE TABLE tbl_finallist;
+	TRUNCATE TABLE tbl_finallist;
 
- insert into tbl_finallist
- (splitted_column,id,cnt)
-select  
-lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(splitted_column,'!',''),'"',''),'.',''),'.',''),')',''),'(',''),'/',''),'?',''),'&',''),'\\',''),'+',''),'-',''),'<','')) as splitted_column 
- ,id,count(*) as cnt from my_splits where splitted_column is not null and splitted_column <> ''
-and splitted_Column not in (select wordslist from tbl_stopwordlist)
-group by lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(splitted_column,'!',''),'"',''),'.',''),'.',''),')',''),'(',''),'/',''),'?',''),'&',''),'\\',''),'+',''),'-',''),'<','') ),id
- 
-order by cnt desc
-limit 1;
+	INSERT INTO tbl_finallist 
+				( 
+							splitted_column, 
+							id, 
+							cnt 
+				) 
+	SELECT   Lower(splitted_column) AS splitted_column , 
+			 id, 
+			 Count(*) AS cnt 
+	FROM     my_splits 
+	WHERE    splitted_column IS NOT NULL 
+	AND      splitted_column <> '' 
+	AND      splitted_column NOT IN 
+			 ( 
+					SELECT wordslist 
+					FROM   tbl_stopwordlist
+			) 
+	GROUP BY Lower(splitted_column), id 
+	ORDER BY cnt DESC limit 1;
 
-insert into tbl_finallist
-(splitted_column,id,cnt)
-select  
-lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(splitted_column,'!',''),'"',''),'.',''),'.',''),')',''),'(',''),'/',''),'?',''),'&',''),'\\',''),'+',''),'-',''),'<','')) as splitted_column 
- ,'NFL',count(*) as cnt from my_splits where splitted_column is not null and splitted_column <> ''
-and splitted_Column not in (select wordslist from tbl_stopwordlist)
-group by lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(splitted_column,'!',''),'"',''),'.',''),'.',''),')',''),'(',''),'/',''),'?',''),'&',''),'\\',''),'+',''),'-',''),'<',''))  
- 
-order by cnt desc
-limit 1;
+	INSERT INTO tbl_finallist 
+				( 
+							splitted_column, 
+							id, 
+							cnt 
+				) 
+	SELECT   Lower(splitted_column) AS splitted_column , 
+			 'NFL', 
+			 Count(*) AS cnt 
+	FROM     my_splits 
+	WHERE    splitted_column IS NOT NULL 
+	AND      splitted_column <> '' 
+	AND      splitted_column NOT IN 
+			 ( 
+					SELECT wordslist 
+					FROM   tbl_stopwordlist
+			) 
+	GROUP BY Lower(splitted_column) 
+	ORDER BY cnt DESC limit 1;
 
-truncate table adText;
-	
-insert into adText (linkurl,add_ts)
-select concat(splitted_Column, '>' , 'http://www.google.com/search?q=' , splitted_Column ,'&btnI') , sysdate() from tbl_finallist where id='NFL' and splitted_column is not null;
+	TRUNCATE TABLE adtext;
+	INSERT INTO adtext 
+				( 
+							linkurl, 
+							add_ts 
+				) 
+	SELECT Concat(splitted_column, '>' , 'http://www.google.com/search?q=' , splitted_column ,'&btnI') , 
+		   Sysdate() 
+	FROM   tbl_finallist 
+	WHERE  id='NFL' 
+	AND    splitted_column IS NOT NULL;
 
-insert into adText (linkurl,add_ts)
-SELECT concat(link,'>',hyperlink) ,sysdate() FROM tbl_adinventory s JOIN tbl_finallist c
-ON FIND_IN_SET(LOWER(s.keyword),LOWER(c.splitted_Column)) where c.id='NFL'
+	INSERT INTO adtext 
+				( 
+							linkurl, 
+							add_ts 
+				) 
+	SELECT Concat(link,'>',hyperlink) , 
+		   Sysdate() 
+	FROM   tbl_adinventory s 
+	JOIN   tbl_finallist c 
+	ON     Find_in_set(Lower(s.keyword),Lower(c.splitted_column)) 
+	WHERE  c.id='NFL' 
 
-END$$
-DELIMITER ;
+END $$ 
+
+DELIMITER;
