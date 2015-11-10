@@ -12,9 +12,10 @@ function nullif($var){
  } 
  
  function clean($string) 
- {   
+ {
    $string = str_replace('\n', '', $string);
-   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+   return preg_replace("/[^ \w]+/", "", $string);
+   //return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
  }
  
  $con = mysqli_connect("us-cdbr-iron-east-03.cleardb.net","bee1e683ba77e3","ad803f31","ad_463a2c81da5e2c0");
