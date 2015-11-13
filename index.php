@@ -72,10 +72,10 @@
 		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;"><a href="http://www.amazon.com" target="_blank"> <span class="highlight">Start Shopping at Amazon</span> </a></p></div>';}
 		if(link=='moneyball')
 		{
-			linkPrint = '<span style="background-color: yellow;font-size:20px;font-weight: bold;">Ad</span>' 
+			linkPrint = '<span style="background-color: yellow;font-size:20px;font-weight: bold;">&nbsp;Ad&nbsp;</span>' 
 			linkPrint = linkPrint + '<a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank">';
 			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:20%;height:auto;">'; 
-			linkPrint = linkPrint + '<span style="font-size:20px;font-weight: bold;">Watch Moneyball in HD for $12.99</Span></a>';
+			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;Watch Moneyball in HD for $12.99</Span></a>';
 		}
 				$("#ads").html(linkPrint); 
  	                  }, 
@@ -198,7 +198,7 @@ $(window).load(function(){
         
 			<div style="position:relative;">
 			<form id="send-message-area" style="width:auto;height=50px;">
-					<textarea id="sendie" style="width: 500px;" maxlength="100" placeholder="Type Your Mesage Here" autocomplete="off" autofocus></textarea>
+					<textarea id="sendie" style="width: 400px;" maxlength="100" placeholder="Type Your Mesage Here" autocomplete="off" autofocus></textarea>
 			</form>
 
 			<div id="ads"> </div>										
