@@ -7,8 +7,21 @@ if (mysqli_connect_errno($con))
 {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
+
+/* call stored procedure with out any parameters*/
 $sql = "call ad_463a2c81da5e2c0.splitChatstring();";
 $result = $con->query($sql);
+
+
+
+/* Call a stored procedure with an INOUT parameter 
+
+$userName = $_POST["nickname"];
+$sth = $dbh->prepare('call ad_463a2c81da5e2c0.splitChatstring(?);');
+$sth->bindParam(1, $userName, PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT, 12);
+$sth->execute();
+*/
+
 $sql = "select linkurl from adText order by add_ts desc limit 1;";
 $result = $con->query($sql);
 

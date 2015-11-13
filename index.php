@@ -37,7 +37,8 @@
     {
     	 $.ajax({  
  	     	url: 'AdService.php', 
- 	         data: {Chat: "nanu"}, 
+			data: {Chat: Chat,
+					 nickname:nickname },  	         
  	         type: 'post', 
  	         success: function(output) { 
 			 
@@ -58,26 +59,45 @@
 				link = res[0];
 				linkurl = res[1];
 			}
-		var linkPrint='<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;">Your AD related to <a href="';
-		linkPrint = linkPrint+ linkurl;
-		linkPrint = linkPrint + '"  target="_blank" >';
-		linkPrint = linkPrint + '<span class="highlight">'+ link+'</span>';
-		linkPrint = linkPrint + ' </a> is here</p></div>';
-		
+			
+			var linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
+			linkPrint = linkPrint + '<a href="'+linkurl+ '" target="_blank">';			
+			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;'+link+'</Span>';
+			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:20%;height:auto;"></a>'; 
+				
 		if(link=='cricket')
-		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;"><a href="http://www.cricbuzz.com" target="_blank"> <span class="highlight">Cricbuzz Live Cricket Scores</span> </a></p></div>';}
+		{
+			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
+			linkPrint = linkPrint + '<a href="http://www.cricbuzz.com" target="_blank">';			
+			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;Live Cricket Scores</Span>';
+			linkPrint = linkPrint + '<img src="/images/cricbuzz.png" id="vz" style="width:20%;height:auto;"></a>'; 			
+			
+		}
 		if(link=='oakland')
-		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;"><a href="http://oakland.athletics.mlb.com/ticketing/?c_id=oak" target="_blank"> <span class="highlight">Buy Oakland Athletics Tickets</span></a> </p></div>';}
+		{
+			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
+			linkPrint = linkPrint + '<a href="http://oakland.athletics.mlb.com/ticketing/?c_id=oak" target="_blank">';			
+			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;Buy Oakland Athletics Tickets</Span>';
+			linkPrint = linkPrint + '<img src="/images/oakland.png" id="vz" style="width:20%;height:auto;"></a>'; 
+						
+		}
 		if(link=='shopping')
-		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;"><a href="http://www.amazon.com" target="_blank"> <span class="highlight">Start Shopping at Amazon</span> </a></p></div>';}
+		{
+			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
+			linkPrint = linkPrint + '<a href="http://www.amazon.com" target="_blank">';			
+			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;Start Shopping at Amazon</Span>';
+			linkPrint = linkPrint + '<img src="/images/amazon.png" id="vz" style="width:20%;height:auto;"></a>'; 
+			
+		}
 		if(link=='moneyball')
 		{
-			linkPrint = '<span style="background-color: yellow;font-size:20px;font-weight: bold;">&nbsp;Ad&nbsp;</span>' 
-			linkPrint = linkPrint + '<a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank">';
-			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:20%;height:auto;">'; 
-			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;Watch Moneyball in HD for $12.99</Span></a>';
+			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
+			linkPrint = linkPrint + '<a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank">';			
+			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;Watch Moneyball in HD for $12.99</Span>';
+			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:20%;height:auto;"></a>'; 
 		}
-				$("#ads").html(linkPrint); 
+		
+		$("#ads").html(linkPrint); 
  	                  }, 
  	         error:function(err){ 
  	         	 
