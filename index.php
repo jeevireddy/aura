@@ -37,8 +37,7 @@
     {
     	 $.ajax({  
  	     	url: 'AdService.php', 
-			data: {Chat: Chat,
-					 nickname:nickname },  	         
+			data: {Chat: "nanu"},  	         
  	         type: 'post', 
  	         success: function(output) { 
 			 
