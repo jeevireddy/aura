@@ -71,7 +71,7 @@
 		if(link=='shopping')
 		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:20px;" ><p style="color:blue;font-weight:bold;"><a href="http://www.amazon.com" target="_blank"> <span class="highlight">Start Shopping at Amazon</span> </a></p></div>';}
 		if(link=='moneyball')
-		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:20px;" ><p style="color:blue;font-weight:bold;"><a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank"> <span class="highlight">Watch Moneyball - Verizon On demand Video</span></a> </p></div>';}
+		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:20px;" ><p style="color:blue;font-weight:bold;"><a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank"> <span class="highlight"><img src="images/Verizon-logo-2015.png" alt="Verizon" width="42" height="42" border="0">Watch Moneyball - Verizon On demand Video</span></a> </p></div>';}
 		
 				$("#ads").html(linkPrint); 
  	                  }, 
@@ -81,6 +81,7 @@
  	    	 }); 
         }
     
+	
 $(window).load(function(){
 /*
 	alert($("#chat-area").position().top);
