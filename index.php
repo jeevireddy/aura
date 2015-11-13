@@ -58,21 +58,25 @@
 				link = res[0];
 				linkurl = res[1];
 			}
-		var linkPrint='<div style="left:20px;top:5px;position:relative;font-size:20px;" ><p style="color:blue;font-weight:bold;">Your AD related to <a href="';
+		var linkPrint='<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;">Your AD related to <a href="';
 		linkPrint = linkPrint+ linkurl;
 		linkPrint = linkPrint + '"  target="_blank" >';
 		linkPrint = linkPrint + '<span class="highlight">'+ link+'</span>';
 		linkPrint = linkPrint + ' </a> is here</p></div>';
 		
 		if(link=='cricket')
-		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:20px;" ><p style="color:blue;font-weight:bold;"><a href="http://www.cricbuzz.com" target="_blank"> <span class="highlight">Cricbuzz Live Cricket Scores</span> </a></p></div>';}
+		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;"><a href="http://www.cricbuzz.com" target="_blank"> <span class="highlight">Cricbuzz Live Cricket Scores</span> </a></p></div>';}
 		if(link=='oakland')
-		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:20px;" ><p style="color:blue;font-weight:bold;"><a href="http://oakland.athletics.mlb.com/ticketing/?c_id=oak" target="_blank"> <span class="highlight">Buy Oakland Athletics Tickets</span></a> </p></div>';}
+		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;"><a href="http://oakland.athletics.mlb.com/ticketing/?c_id=oak" target="_blank"> <span class="highlight">Buy Oakland Athletics Tickets</span></a> </p></div>';}
 		if(link=='shopping')
-		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:20px;" ><p style="color:blue;font-weight:bold;"><a href="http://www.amazon.com" target="_blank"> <span class="highlight">Start Shopping at Amazon</span> </a></p></div>';}
+		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:15px;" ><p style="color:blue;font-weight:bold;"><a href="http://www.amazon.com" target="_blank"> <span class="highlight">Start Shopping at Amazon</span> </a></p></div>';}
 		if(link=='moneyball')
-		{linkPrint = '<div style="left:20px;top:5px;position:relative;font-size:20px;" ><p style="color:blue;font-weight:bold;"><a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank"> <span class="highlight"><img src="images/vzlogo_lg.png" id="vz" style="width:28%;height:auto;"></img> VOD to Watch Moneyball</span></a> </p></div>';}
-		
+		{
+			linkPrint = '<span style="background-color: yellow;font-size:20px;font-weight: bold;">Ad</span>' 
+			linkPrint = linkPrint + '<a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank">';
+			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:20%;height:auto;">'; 
+			linkPrint = linkPrint + '<span style="font-size:20px;font-weight: bold;">Watch Moneyball in HD for $12.99</Span></a>';
+		}
 				$("#ads").html(linkPrint); 
  	                  }, 
  	         error:function(err){ 
@@ -189,20 +193,17 @@ $(window).load(function(){
 		<tr>
 		<td> 		
 		<div id="chat-wrap">
-			<div id="chat-area"> </div>
+			<div id="chat-area">
+			</div>
         
-		<div style="position:relative;">
-			<form id="send-message-area">
-				<textarea id="sendie" maxlength = '100' placeholder="Type Your Mesage Here"></textarea>
+			<div style="position:relative;">
+			<form id="send-message-area" style="width:auto;height=50px;">
+					<textarea id="sendie" style="width: 500px;" maxlength="100" placeholder="Type Your Mesage Here" autocomplete="off" autofocus></textarea>
 			</form>
-		</div>
-		</div>
-		</td>
-		</tr>		
-					
-		<tr>
-		<td> 		
-			<div id="ads"></div>
+
+			<div id="ads"> </div>										
+			</div>
+			
 		</td>
 		</tr>		
 		
