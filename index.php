@@ -61,8 +61,8 @@
 			
 			var linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="'+linkurl+ '" target="_blank">';			
-			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;'+link+'</Span>';
-			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:20%;height:auto;"></a>'; 
+			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;learn more about - '+link+' at &nbsp;</Span>';
+			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:25%;height:auto;"></a>'; 
 				
 		if(link=='cricket')
 		{
@@ -77,7 +77,7 @@
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="http://oakland.athletics.mlb.com/ticketing/?c_id=oak" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Buy Oakland Athletics Tickets&nbsp;&nbsp</Span>';
-			linkPrint = linkPrint + '<img src="/images/oakland_01.png" id="vz" style="width:10%;height:auto;"></a>'; 
+			linkPrint = linkPrint + '<img src="/images/oakland_01.png" id="vz" style="width:25%;height:auto;"></a>'; 
 						
 		}
 		if(link=='shopping')
@@ -85,7 +85,7 @@
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="http://www.amazon.com" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Start Shopping at&nbsp;&nbsp</Span>';
-			linkPrint = linkPrint + '<img src="/images/amazon.png" id="vz" style="width:40%;height:auto;"></a>'; 
+			linkPrint = linkPrint + '<img src="/images/amazon.png" id="vz" style="width:25%;height:auto;"></a>'; 
 			
 		}
 		if(link=='moneyball')
@@ -93,7 +93,7 @@
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Watch Moneyball in HD for $12.99&nbsp;&nbsp</Span>';
-			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:20%;height:auto;"></a>'; 
+			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:25%;height:auto;"></a>'; 
 		}
 		
 		$("#ads").html(linkPrint); 
