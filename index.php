@@ -93,7 +93,7 @@
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Watch Moneyball in HD for $12.99&nbsp;&nbsp</Span>';
-			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:25%;height:auto;"></a>'; 
+			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:22%;height:auto;"></a>'; 
 		}
 		
 		$("#ads").html(linkPrint); 
