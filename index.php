@@ -69,7 +69,7 @@
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="http://www.cricbuzz.com" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Live Cricket Scores&nbsp;&nbsp</Span>';
-			linkPrint = linkPrint + '<img src="/images/cricbuzz_01.png" id="vz" style="width:25%;height:auto;"></a>'; 			
+			linkPrint = linkPrint + '<img src="/images/cricbuzz_logo.png" id="vz" style="width:25%;height:auto;"></a>'; 			
 			
 		}
 		if(link=='oakland')
@@ -85,7 +85,7 @@
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="http://www.amazon.com" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Start Shopping at&nbsp;&nbsp</Span>';
-			linkPrint = linkPrint + '<img src="/images/amazon.png" id="vz" style="width:25%;height:auto;"></a>'; 
+			linkPrint = linkPrint + '<img src="/images/amazon.png" id="vz" style="width:22%;height:auto;"></a>'; 
 			
 		}
 		if(link=='moneyball')
