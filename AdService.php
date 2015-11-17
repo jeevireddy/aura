@@ -31,7 +31,7 @@ if (!$result && !$resultcolumn) {
 }
 
 if (mysqli_num_rows($result) == 0) {
-	echo "No rows found, nothing to print so am exiting";
+	echo "Learn About Verizon>verizon.com";
 	exit;
 }
 
