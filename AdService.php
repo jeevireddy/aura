@@ -31,7 +31,7 @@ if (!$result && !$resultcolumn) {
 }
 
 if (mysqli_num_rows($result) == 0) {
-	echo "Learn About Verizon>verizon.com";
+	echo "Verizon>http://www.verizon.com";
 	exit;
 }
 
