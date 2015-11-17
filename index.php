@@ -64,7 +64,7 @@
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;learn more about - '+link+' at &nbsp;</Span>';
 			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:25%;height:auto;"></a>'; 
 				
-		if(link=='cricket')
+		if(link=='Live Cricket Scores')
 		{
 			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
@@ -73,7 +73,7 @@
 			linkPrint = linkPrint + '<img src="/images/cricbuzz-logo.png" id="vz" style="width:25%;height:auto;"></a>'; 			
 			
 		}
-		if(link=='oakland')
+		if(link=='Oakland Athletics Tickets')
 		{
 			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
@@ -82,7 +82,7 @@
 			linkPrint = linkPrint + '<img src="/images/oakland_01.png" id="vz" style="width:25%;height:auto;"></a>'; 
 						
 		}
-		if(link=='shopping')
+		if(link=='Shopping at Amazon')
 		{
 			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
@@ -91,7 +91,7 @@
 			linkPrint = linkPrint + '<img src="/images/amazon.png" id="vz" style="width:22%;height:auto;"></a>'; 
 			
 		}
-		if(link=='moneyball')
+		if(link=='Moneyball on demand video')
 		{
 			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
