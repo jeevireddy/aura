@@ -63,8 +63,6 @@
 			linkPrint = linkPrint + '<a href="'+linkurl+ '" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;learn more about - '+link+' at &nbsp;</Span>';
 			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:25%;height:auto;"></a>'; 
-		alert(link);
-		alert(linkurl);		
 		if(link=='Live Cricket Scores')
 		{
 			linkPrint ='';
