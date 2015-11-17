@@ -66,6 +66,7 @@
 				
 		if(link=='cricket')
 		{
+			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="http://www.cricbuzz.com" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Live Cricket Scores&nbsp;&nbsp</Span>';
@@ -74,6 +75,7 @@
 		}
 		if(link=='oakland')
 		{
+			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="http://oakland.athletics.mlb.com/ticketing/?c_id=oak" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Buy Oakland Athletics Tickets&nbsp;&nbsp</Span>';
@@ -82,6 +84,7 @@
 		}
 		if(link=='shopping')
 		{
+			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="http://www.amazon.com" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Start Shopping at&nbsp;&nbsp</Span>';
@@ -90,6 +93,7 @@
 		}
 		if(link=='moneyball')
 		{
+			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="https://www.verizon.com/Ondemand/Movies/MovieDetails/Moneyball/TVNX0011284101153930" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">Watch Moneyball in HD for $12.99&nbsp;&nbsp</Span>';
