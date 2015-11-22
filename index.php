@@ -49,8 +49,8 @@
 			 var linkurl ='';
 			if (str =="")
 			{
-				link = 'Google';
-				linkurl = 'http://google.com';
+				link = 'us';
+				linkurl = 'http://www.verizon.com';
 			}
 			else
 			{
@@ -58,9 +58,6 @@
 				link = res[0];
 				linkurl = res[1];
 			}
-			alert(str);
-			alert(link);
-			alert(linkurl);
 			
 			var linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="'+linkurl+ '" target="_blank">';			

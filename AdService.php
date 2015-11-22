@@ -20,7 +20,8 @@ $sql = "select linkurl from adText order by add_ts desc limit 1;";
 $result1 = $con->query($sql);
 
 if (!$result1) {
-	echo "Could not successfully run query ($sql) from DB: " . $con->error;
+	/*echo "Could not successfully run query ($sql) from DB: " . $con->error;*/
+	echo "us>http://www.verizon.com";
 	exit;
 }
 
