@@ -2,8 +2,8 @@
 ini_set("error_reporting", E_ALL); 
 ini_set("display_errors", 1); 
 
-$con=mysqli_connect("us-cdbr-iron-east-03.cleardb.net","bee1e683ba77e3","ad803f31","ad_463a2c81da5e2c0");
-if (mysqli_connect_errno($con))
+$con = mysqli_connect("us-cdbr-iron-east-03.cleardb.net","bee1e683ba77e3","ad803f31","ad_463a2c81da5e2c0");
+if ( mysqli_connect_errno($con))
 {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
@@ -13,19 +13,10 @@ $sql = "call ad_463a2c81da5e2c0.splitChatStringFinal();";
 $result = $con->query($sql);
 
 
-
-/* Call a stored procedure with an INOUT parameter 
-
-$userName = $_POST["nickname"];
-$sth = $dbh->prepare('call ad_463a2c81da5e2c0.splitChatstring(?);');
-$sth->bindParam(1, $userName, PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT, 12);
-$sth->execute();
-*/
-
 $sql = "select linkurl from adText order by add_ts desc limit 1;";
 $result1 = $con->query($sql);
 
-if (!$result1 && !$resultcolumn) {
+if (!$result1) {
 	echo "Could not successfully run query ($sql) from DB: " . $con->error;
 	exit;
 }
@@ -35,32 +26,14 @@ if (mysqli_num_rows($result1) == 0) {
 	exit;
 }
 
-/*
-while($col = mysqli_fetch_field($result))
-{
-	echo "<pre>";
-	print_r($col);
-	echo "</pre>";
-	echo $col->name;
-
-
-}
-*/
-// While a row of data exists, put that row in $row as an associative array
-// Note: If you're expecting just one row, no need to use a loop
-// Note: If you put extract($row); inside the following loop, you'll
-//       then create $userid, $fullname, and $userstatus
-while ($row = mysqli_fetch_array($result1)) {
-	/*for($i=0;$i<sizeof($row);$i++){
-		echo($row[$i]);	
-	}*/
-		
+while ($row = mysqli_fetch_array($result1)) 
+{		
 	$table =$row[0];
 }
 
 
 echo  $table;
 
-		mysqli_close($con);
+mysqli_close($con);
 
 ?>

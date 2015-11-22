@@ -65,7 +65,7 @@
 			var linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="'+linkurl+ '" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">learn more about - '+link+' at </Span>&nbsp;';
-			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:25%;height:auto;"></a>'; 
+			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:22%;height:auto;"></a>'; 
 		
 		if(link.indexOf("cricket") > -1)
 		{
@@ -177,7 +177,7 @@ $(window).load(function(){
                     //if(
                     
                     //alert(text);
-                    if(counter%4==0){
+                    if(counter%3==0){
                     adsdata();
                     }
     				var maxLength = $(this).attr("maxlength");  
