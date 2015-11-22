@@ -220,7 +220,7 @@ $(window).load(function(){
         
 			<div style="position:relative;">
 			<form id="send-message-area" style="width:auto;height=50px;">
-					<textarea id="sendie" style="width: 400px;" maxlength="100" placeholder="Type Your Mesage Here" autocomplete="off" autofocus></textarea>
+					<textarea id="sendie" style="width: 400px;" maxlength="100" placeholder="Type Your Message Here" autocomplete="off" autofocus></textarea>
 			</form>
 
 			<div id="ads"> </div>										

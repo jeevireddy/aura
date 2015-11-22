@@ -1,5 +1,5 @@
 DELIMITER $$
-CREATE PROCEDURE splitChatString() 
+CREATE PROCEDURE splitChatStringFinal() 
 BEGIN
 
 DECLARE my_delimiter CHAR(1);
@@ -10,12 +10,20 @@ DECLARE i INT;
 DECLARE split_id char(200);
 DECLARE ins_query VARCHAR(5000);
 
+DECLARE keyWord1 varchar(100) ;
+DECLARE keyWord2 varchar(100) ;
+DECLARE keyWord1Cnt INT ;
+DECLARE keyWord2Cnt INT ;
+declare searchKeyWord varchar(200);
+declare searchText varchar(2000);
+
+
 DECLARE  	splitter_cur CURSOR FOR
 
 SELECT account_id,
 replace(chat,'''','') chat 
 FROM tbl_chathistory
-ORDER 	BY chat_ts DESC limit 6;
+ORDER 	BY chat_ts DESC limit 4;
 
 
 DECLARE CONTINUE HANDLER FOR NOT FOUND SET done=1;
@@ -60,7 +68,7 @@ as splitted_column,split_id;
 END LOOP;
 
 CLOSE splitter_cur;
-
+delete from my_splits where splitted_column ='' ;
 TRUNCATE TABLE tbl_finallist;
 
  insert into tbl_finallist
@@ -72,7 +80,7 @@ and splitted_Column not in (select wordslist from tbl_stopwordlist)
 group by lower(splitted_column),id
  
 order by cnt desc
-limit 1;
+limit 2;
 
 insert into tbl_finallist
 (splitted_column,id,cnt)
@@ -84,7 +92,37 @@ and splitted_Column <>' '
 group by lower(splitted_column)  
  
 order by cnt desc
+limit 2;
+
+SELECT @keyWord1 := splitted_column , 
+	  @keyWord1Cnt := cnt 
+from tbl_finallist
+where 1 = 1
+AND ID = 222115
+and splitted_Column is not null
+order by cnt desc
 limit 1;
+
+
+SELECT @keyWord2 := splitted_column , 
+	  @keyWord2Cnt := cnt 
+from tbl_finallist
+where 1 = 1
+AND ID = 222115
+and splitted_Column is not null
+and splitted_Column <> @keyWord1
+order by cnt desc
+limit 1;
+
+   IF @keyWord1Cnt = @keyWord2Cnt 
+	THEN SET @searchKeyWord = concat(@keyWord1,'+',@keyWord2);
+   ELSEIF @keyWord2Cnt < @keyWord1Cnt 
+	THEN SET @searchKeyWord = @keyWord1;
+   ELSE SET @searchKeyWord = '';
+   END IF;
+select @keyWord1,@keyWord2, @keyWord1Cnt, @keyWord1Cnt, @searchKeyWord;
+
+   set @searchText = Concat(@searchKeyWord,'>' , 'http://www.google.com/search?q=' , @searchKeyWord,'+verizon&btnI') ;
 
 	TRUNCATE TABLE adtext;
 	INSERT INTO adtext 
@@ -92,12 +130,9 @@ limit 1;
 							linkurl, 
 							add_ts 
 				) 
-	SELECT Concat(splitted_column, '>' , 'http://www.google.com/search?q=' , splitted_column ,'&btnI') , 
-		   Sysdate() 
-	FROM   tbl_finallist 
-	WHERE  id='NFL' 
-	AND    splitted_column IS NOT NULL;
-
+	
+	VAlUES 	( @searchText, 	Sysdate());
+	
 	INSERT INTO adtext 
 				( 
 							linkurl, 
@@ -112,5 +147,4 @@ limit 1;
 
 
 END $$ 
-
 DELIMITER;

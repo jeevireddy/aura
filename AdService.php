@@ -9,7 +9,7 @@ if (mysqli_connect_errno($con))
 }
 
 /* call stored procedure with out any parameters*/
-$sql = "call ad_463a2c81da5e2c0.splitChatstring();";
+$sql = "call ad_463a2c81da5e2c0.splitChatStringFinal();";
 $result = $con->query($sql);
 
 
