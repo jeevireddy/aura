@@ -12,6 +12,9 @@ if ( mysqli_connect_errno($con))
 $sql = "call ad_463a2c81da5e2c0.splitChatStringFinal();";
 $result = $con->query($sql);
 
+mysqli_close($con);
+$con = mysqli_connect("us-cdbr-iron-east-03.cleardb.net","bee1e683ba77e3","ad803f31","ad_463a2c81da5e2c0");
+
 
 $sql = "select linkurl from adText order by add_ts desc limit 1;";
 $result1 = $con->query($sql);
