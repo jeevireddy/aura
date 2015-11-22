@@ -23,14 +23,14 @@ $sth->execute();
 */
 
 $sql = "select linkurl from adText order by add_ts desc limit 1;";
-$result = $con->query($sql);
+$result1 = $con->query($sql);
 
-if (!$result && !$resultcolumn) {
+if (!$result1 && !$resultcolumn) {
 	echo "Could not successfully run query ($sql) from DB: " . $con->error;
 	exit;
 }
 
-if (mysqli_num_rows($result) == 0) {
+if (mysqli_num_rows($result1) == 0) {
 	echo "us>http://www.verizon.com";
 	exit;
 }
@@ -50,12 +50,11 @@ while($col = mysqli_fetch_field($result))
 // Note: If you're expecting just one row, no need to use a loop
 // Note: If you put extract($row); inside the following loop, you'll
 //       then create $userid, $fullname, and $userstatus
-while ($row = mysqli_fetch_array($result)) {
+while ($row = mysqli_fetch_array($result1)) {
 	/*for($i=0;$i<sizeof($row);$i++){
 		echo($row[$i]);	
 	}*/
-	
-	
+		
 	$table =$row[0];
 }
 
