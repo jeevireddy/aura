@@ -59,6 +59,9 @@
 				linkurl = res[1];
 			}
 			
+			alert(link);
+			alert(linkurl);
+			
 			var linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="'+linkurl+ '" target="_blank">';			
 			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;learn more about - '+link+' at &nbsp;</Span>';
