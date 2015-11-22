@@ -58,15 +58,16 @@
 				link = res[0];
 				linkurl = res[1];
 			}
-			
+			alert(str);
 			alert(link);
 			alert(linkurl);
 			
-			var linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
+			var linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;&nbsp;' 
 			linkPrint = linkPrint + '<a href="'+linkurl+ '" target="_blank">';			
-			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">&nbsp;&nbsp;learn more about - '+link+' at &nbsp;</Span>';
+			linkPrint = linkPrint + '<span style="font-size:15px;font-weight: bold;">learn more about - '+link+' at </Span>&nbsp;';
 			linkPrint = linkPrint + '<img src="/images/vzlogo_lg.png" id="vz" style="width:25%;height:auto;"></a>'; 
-		if(link=='Live Cricket Scores')
+		
+		if(link.indexOf("cricket") > -1)
 		{
 			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
@@ -75,7 +76,7 @@
 			linkPrint = linkPrint + '<img src="/images/cricbuzz-logo.png" id="vz" style="width:25%;height:auto;"></a>'; 			
 			
 		}
-		if(link=='Oakland Athletics Tickets')
+		if(link.indexOf("oakland")> -1)
 		{
 			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
@@ -84,7 +85,7 @@
 			linkPrint = linkPrint + '<img src="/images/oakland_01.png" id="vz" style="width:25%;height:auto;"></a>'; 
 						
 		}
-		if(link=='Shopping at Amazon')
+		if(link.indexOf("shopping")> -1)
 		{
 			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
@@ -93,7 +94,7 @@
 			linkPrint = linkPrint + '<img src="/images/amazon.png" id="vz" style="width:22%;height:auto;"></a>'; 
 			
 		}
-		if(link=='Moneyball on demand video')
+		if(link.indexOf("moneyball")> -1)
 		{
 			linkPrint ='';
 			linkPrint = '<span style="background-color: yellow;font-size:15;font-weight: bold;">&nbsp;Ad&nbsp;</span>&nbsp;&nbsp;' 
