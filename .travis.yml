@@ -18,7 +18,7 @@ deploy:
   provider: cloudfoundry
   buildpack: https://github.com/cloudfoundry/php-buildpack.git
   username: jeevireddy@gmail.com
-  password: ckck1025
+  password: ******
   api: https://api.run.pivotal.io
   organization: aura
   space: development
